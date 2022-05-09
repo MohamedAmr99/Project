@@ -1,0 +1,137 @@
+/* start variables */
+:root {
+    --main-color:#282e40 ;
+    --second-color:#fff ;
+    --main-transition:0.3s;
+}
+/* end variables */
+/* start global rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Poppins', sans-serif;   
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+.container{
+    padding-left: 15px ;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-width: 768px) {
+  .container {
+      width: 750px; 
+  }
+}
+/* medium */
+@media (min-width: 992px) { 
+  .container {
+      width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) { 
+  .container {
+      width: 1170px;
+   }
+}
+/* end global rules */
+/* start header  */
+.header { 
+    background: #fff;
+    border-top: solid #282e40 23px;
+    position: relative;
+}
+.header::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 23px;
+    background-color: #fff;
+    top: -23px;
+    right: -7px;
+    transform: skewX(-27deg);
+}
+@media (max-width:767px) {
+    .header::before {
+        width: 160px;
+    }
+
+}
+.header .nav i {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-right: 20px;
+}
+@media (max-width :991px) {
+    .header .main-nav li a {
+        padding-left:15px ;
+        padding-right: 15px;
+    }
+}
+@media (max-width:767px ) {
+    .header .main-nav li a {
+        display: none;
+    }
+    .header .nav i:hover + ul {
+        display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    }
+}
+@media (min-width:767px ) {
+    .header .nav i {
+    display: none;
+}
+}
+.header .nav i:hover + .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 0;
+}
+.header .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+.header .main-nav li a {
+    font-size: 20px;
+    color: #3a3838;
+    padding: 15px 25px;
+    transition: var(--main-transition);
+}
+.header .main-nav li a.active {
+    color: #639ebe;
+}
+.header .main-nav li:hover a {
+    color: #639ebe;
+}
+/* end header  */
